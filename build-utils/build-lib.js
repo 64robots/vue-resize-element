@@ -66,10 +66,7 @@ if (process.env.VUE_APP_E2E) {
   )
   ncp(
     path.resolve(__dirname, '../package.json'),
-    path.resolve(
-      __dirname,
-      '../node_modules/vue-resize-element/package.json'
-    ),
+    path.resolve(__dirname, '../node_modules/vue-resize-element/package.json'),
     error => {
       if (error) console.error(error)
     }

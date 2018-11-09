@@ -1,13 +1,18 @@
 {
   "name": "vue-resize-element",
-  "description": "A simple, example component library using Vue CLI 3.",
-  "version": "1.2.3",
+  "description": "A Wrapper that allows to resize the element passed as slot",
+  "version": "0.1.0",
   "author": {
     "name": "64 Robots",
     "email": "info@64robots.com"
   },
   "license": "MIT",
-  "files": ["src", "dist", "LICENSE", "README.md"],
+  "files": [
+    "src",
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "main": "dist/index.js",
   "unpkg": "dist/index.umd.min.js",
   "jsdelivr": "dist/index.umd.min.js",
@@ -22,11 +27,9 @@
   "scripts": {
     "dev": "node build-utils/update-index-file.js && vue-cli-service serve",
     "build": "node build-utils/build-lib.js",
-    "lint":
-      "eslint --ext .js,.vue --fix . && stylelint --fix \"{src,tests/e2e/demo}/**/*.{css,vue}\" && markdownlint docs/*.md *.md && prettier --write --loglevel warn \"**/*.{js,json,css,vue,md}\"",
+    "lint": "eslint --ext .js,.vue --fix . && stylelint --fix \"{src,tests/e2e/demo}/**/*.{css,vue}\" && markdownlint docs/*.md *.md && prettier --write --loglevel warn \"**/*.{js,json,css,vue,md}\"",
     "unit": "vue-cli-service test:unit",
-    "e2e":
-      "cross-env VUE_APP_E2E=true npm run build && vue-cli-service test:e2e --headless",
+    "e2e": "cross-env VUE_APP_E2E=true npm run build && vue-cli-service test:e2e --headless",
     "test": "npm run unit && npm run e2e",
     "prepublishOnly": "npm run lint && npm run test"
   },
@@ -73,9 +76,15 @@
         }
       ]
     ],
-    "plugins": ["transform-vue-jsx"]
+    "plugins": [
+      "transform-vue-jsx"
+    ]
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "eslintConfig": {
     "root": true,
     "parserOptions": {
@@ -92,7 +101,10 @@
       "no-console": [
         "warn",
         {
-          "allow": ["warn", "error"]
+          "allow": [
+            "warn",
+            "error"
+          ]
         }
       ],
       "vue/component-name-in-template-casing": [
@@ -124,7 +136,11 @@
     },
     "overrides": [
       {
-        "files": ["src/**/*", "demo/**/*", "tests/unit/**/*"],
+        "files": [
+          "src/**/*",
+          "demo/**/*",
+          "tests/unit/**/*"
+        ],
         "parserOptions": {
           "parser": "babel-eslint",
           "sourceType": "module"
@@ -134,18 +150,24 @@
         }
       },
       {
-        "files": ["tests/e2e/**/*"],
+        "files": [
+          "tests/e2e/**/*"
+        ],
         "parserOptions": {
           "parser": "babel-eslint",
           "sourceType": "module"
         },
-        "plugins": ["cypress"],
+        "plugins": [
+          "cypress"
+        ],
         "env": {
           "cypress/globals": true
         }
       },
       {
-        "files": ["**/*.unit.js"],
+        "files": [
+          "**/*.unit.js"
+        ],
         "parserOptions": {
           "parser": "babel-eslint",
           "sourceType": "module"
@@ -167,19 +189,28 @@
     "/tests/unit/coverage/"
   ],
   "jest": {
-    "setupFiles": ["<rootDir>/tests/unit/setup"],
+    "setupFiles": [
+      "<rootDir>/tests/unit/setup"
+    ],
     "setupTestFrameworkScriptFile": "<rootDir>/tests/unit/matchers",
-    "testMatch": ["**/(*.)unit.js"],
-    "moduleFileExtensions": ["js", "json", "vue"],
+    "testMatch": [
+      "**/(*.)unit.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
     "transform": {
       "^.+\\.vue$": "vue-jest",
       "^.+\\.js$": "babel-jest"
     },
     "moduleNameMapper": {
-      "\\.(jpe?g|png|gif|webp|svg|mp4|webm|ogg|mp3|wav|flac|aac|woff2?|eot|ttf|otf)$":
-        "<rootDir>/tests/unit/fixtures/empty-string.js"
+      "\\.(jpe?g|png|gif|webp|svg|mp4|webm|ogg|mp3|wav|flac|aac|woff2?|eot|ttf|otf)$": "<rootDir>/tests/unit/fixtures/empty-string.js"
     },
-    "snapshotSerializers": ["jest-serializer-vue"],
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ],
     "coverageDirectory": "<rootDir>/tests/unit/coverage",
     "collectCoverageFrom": [
       "src/**/*.{js,vue}",
@@ -205,9 +236,20 @@
       "git add",
       "npm run unit -- --bail --findRelatedTests"
     ],
-    "*.css": ["stylelint --fix", "prettier --write --loglevel warn", "git add"],
-    "*.md": ["markdownlint", "prettier --write --loglevel warn", "git add"],
-    "*.{png,jpeg,jpg,gif,svg}": ["imagemin-lint-staged", "git add"]
+    "*.css": [
+      "stylelint --fix",
+      "prettier --write --loglevel warn",
+      "git add"
+    ],
+    "*.md": [
+      "markdownlint",
+      "prettier --write --loglevel warn",
+      "git add"
+    ],
+    "*.{png,jpeg,jpg,gif,svg}": [
+      "imagemin-lint-staged",
+      "git add"
+    ]
   },
   "postcss": {
     "plugins": {
@@ -241,14 +283,17 @@
     ],
     "rules": {
       "string-no-newline": null,
-      "selector-class-pattern":
-        "^[a-z][a-zA-Z]*(-(enter|leave)(-(active|to))?)?$",
+      "selector-class-pattern": "^[a-z][a-zA-Z]*(-(enter|leave)(-(active|to))?)?$",
       "selector-id-pattern": "^[a-z][a-zA-Z]*$",
       "selector-max-universal": 1,
       "selector-max-type": [
         0,
         {
-          "ignore": ["child", "descendant", "compounded"]
+          "ignore": [
+            "child",
+            "descendant",
+            "compounded"
+          ]
         }
       ]
     }

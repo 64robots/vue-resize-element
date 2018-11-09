@@ -1,6 +1,6 @@
 # Vue Resize Element
 
-> A Wrapper that allows resize to the element passed as slot
+> A Wrapper that allows to resize the element passed as slot
 
 ## Usage
 

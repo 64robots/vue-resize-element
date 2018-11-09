@@ -107,12 +107,12 @@ export default {
   display: flex;
 }
 .resizer {
-  width: 2px;
-  height: 100%;
-  background: black;
   position: absolute;
   left: 14px;
   z-index: 2;
+  width: 2px;
+  height: 100%;
   cursor: col-resize;
+  background: black;
 }
 </style>
