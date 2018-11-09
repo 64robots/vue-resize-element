@@ -1,4 +1,4 @@
-# Hello Vue Components
+# Vue Resize Element
 
 > A Wrapper that allows resize to the element passed as slot
 
